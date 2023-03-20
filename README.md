@@ -1,1 +1,1 @@
-# bcmxt-testnet
+BCMXT (BNB) Mainnet
