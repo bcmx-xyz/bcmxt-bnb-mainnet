@@ -763,7 +763,7 @@ contract bcmxStaking is Ownable, ReentrancyGuard {
         return true;
     }
 
-    function getRewardsAvailable () public view returns (uint256 rewardsAvailable){
+    function getRewardsAvailable () public view returns (uint256 availableReward){
         uint256 length = poolInfo.length;
         uint256 balance = token.balanceOf(address(this));
         uint256 totalDeposit;
@@ -774,10 +774,10 @@ contract bcmxStaking is Ownable, ReentrancyGuard {
         }
         uint256 value = balance - totalDeposit - totalWithdrawn;
         if (value <= 0){
-           rewardsAvailable = 0;
+           availableReward = 0;
         }
         if (value > 0) {
-            rewardsAvailable = value;
+            availableReward = value;
         }
     }
 
